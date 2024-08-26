@@ -1,0 +1,12 @@
+# Ignore Python virtual environment
+citybikes_env/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment variables
+.env
+
+# Ignore data files or other output files
+data/
