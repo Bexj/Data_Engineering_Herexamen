@@ -47,10 +47,21 @@ def load_data(data):
     try:
         df = pl.read_csv(data)
         print(f"Data loaded from memory")
+
+        # Convert timestamp to datetime and handle time zone immediately after loading the data
+        df = df.with_columns([
+            pl.col("timestamp")
+            .str.replace("Z$", "")  # Remove trailing 'Z' if necessary
+            .str.strptime(pl.Datetime)  # Parse to datetime
+            .dt.replace_time_zone("UTC")  # Set the initial timezone to UTC
+            .dt.convert_time_zone("Europe/Brussels")  # Convert to the target timezone
+        ])
+
         return df
     except Exception as e:
         print(f"Error loading data: {e}")
         return None
+
 
 def process_data(df):
     df = df.with_columns([
