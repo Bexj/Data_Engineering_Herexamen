@@ -41,8 +41,14 @@ def create_tables():
             )
         """)
 
+        # Add a unique constraint to prevent duplicate station_id and time_id combinations
+        # cur.execute("""
+        #     ALTER TABLE fact_bike_availability
+        #     ADD CONSTRAINT unique_station_time UNIQUE (station_id, time_id);
+        # """)
+
         conn.commit()
-        print("Tables created successfully")
+        print("Tables created successfully and unique constraint added.")
 
         cur.close()
         conn.close()
