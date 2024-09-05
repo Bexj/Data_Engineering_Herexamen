@@ -58,7 +58,7 @@ def main():
 
     if not data.empty:
         city_options = data['city_name'].unique()
-        selected_city = st.sidebar.selectbox("Select a city to filter by:", city_options)
+        selected_city = st.sidebar.selectbox("Select a city to filter by:", city_options, index=list(city_options).index("Bruxelles") if "Bruxelles" in city_options else 0)
 
         data['datetime'] = pd.to_datetime(data['timestamp'])
 
