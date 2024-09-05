@@ -67,7 +67,7 @@ if latest_file:
             print("Station data inserted into dim_station")
 
         def insert_time_data(timestamp):
-            dt = datetime.fromisoformat(timestamp).replace(microsecond=0).astimezone(timezone(timedelta(hours=2)))
+            dt = datetime.fromisoformat(timestamp).replace(microsecond=0)
             
             cur.execute("""
                 SELECT time_id FROM dim_time

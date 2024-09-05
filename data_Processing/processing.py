@@ -48,13 +48,12 @@ def load_data(data):
         df = pl.read_csv(data)
         print(f"Data loaded from memory")
 
-        # Convert timestamp to datetime and handle time zone immediately after loading the data
         df = df.with_columns([
             pl.col("timestamp")
-            .str.replace("Z$", "")  # Remove trailing 'Z' if necessary
-            .str.strptime(pl.Datetime)  # Parse to datetime
-            .dt.replace_time_zone("UTC")  # Set the initial timezone to UTC
-            .dt.convert_time_zone("Europe/Brussels")  # Convert to the target timezone
+            .str.replace("Z$", "") 
+            .str.strptime(pl.Datetime) 
+            .dt.replace_time_zone("UTC") 
+            .dt.convert_time_zone("Europe/Brussels") 
         ])
 
         return df
