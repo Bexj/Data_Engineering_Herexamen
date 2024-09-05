@@ -49,3 +49,5 @@ The pipeline follows a clear architecture where data flows through ingestion, pr
 ## Side note
 
 * I didn't have time left to package the application using Docker, i only used Docker to run the TimescaleDB container. I worked very hard on this and hope that this isn't a huge issue. Everything worked perfectly on my pc as you can see in the screenshots in the project report. I actually liked making this weirdly enough, when everything started working it was very satisfying. I hope you like it too.
+
+Also i see now that everything is still in folders, which was not how it needed to be, i saw it too late... 
