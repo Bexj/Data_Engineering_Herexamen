@@ -6,21 +6,21 @@ This project implements an end-to-end data pipeline for ingesting, processing, s
 **Project Architecture**
 The pipeline follows a clear architecture where data flows through ingestion, processing, transformation, and visualization stages, orchestrated by Prefect. Here's a brief breakdown:
 
-CityBikes API - The source of real-time bike-sharing data.
-MinIO - Acts as the data lake, storing raw, processed, and aggregated data.
-Bronze Layer - Raw data from the CityBikes API.
-Silver Layer - Cleaned and processed data.
-Gold Layer - Aggregated data ready for analysis and visualization.
-TimescaleDB - The data warehouse where processed data is stored for analysis.
-Prefect - Orchestrates the entire workflow, ensuring smooth transitions between pipeline stages.
-Streamlit - Provides a dashboard for visualizing bike availability over time.
-Docker - TimeScaleDB is containerized for easy deployment.
-Python - Main programming language for data pipeline scripts.
-Polars - Fast data processing library for handling large datasets.
-MinIO - Object storage used as a data lake.
-TimescaleDB - A PostgreSQL-based time-series database for data warehousing.
-Prefect - Orchestrates the pipeline’s workflow, ensuring tasks run in the correct order.
-Streamlit - Frontend visualization tool for displaying bike data interactively.
+* CityBikes API - The source of real-time bike-sharing data.
+* MinIO - Acts as the data lake, storing raw, processed, and aggregated data.
+* Bronze Layer - Raw data from the CityBikes API.
+* Silver Layer - Cleaned and processed data.
+* Gold Layer - Aggregated data ready for analysis and visualization.
+* TimescaleDB - The data warehouse where processed data is stored for analysis.
+* Prefect - Orchestrates the entire workflow, ensuring smooth transitions between pipeline stages.
+* Streamlit - Provides a dashboard for visualizing bike availability over time.
+* Docker - TimeScaleDB is containerized for easy deployment.
+* Python - Main programming language for data pipeline scripts.
+* Polars - Fast data processing library for handling large datasets.
+* MinIO - Object storage used as a data lake.
+* TimescaleDB - A PostgreSQL-based time-series database for data warehousing.
+* Prefect - Orchestrates the pipeline’s workflow, ensuring tasks run in the correct order.
+* Streamlit - Frontend visualization tool for displaying bike data interactively.
 
 ## Setting up the Application
 
